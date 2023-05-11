@@ -1,5 +1,12 @@
 const jwt = require("jsonwebtoken");
 
+/**
+ * Проверяет токен авторизации пользователя
+ * @param {object} req - Запрос
+ * @param {object} res - Ответ сервера
+ * @param {Function} next - Callback-функция для обработки ответа
+ * @returns {json} - Ответ сервера в формате JSON
+ */
 module.exports = function(req, res, next) {
   const token = req.header("token");
   if (!token) return res.status(401).json({ message: "Auth Error" });

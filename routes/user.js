@@ -8,11 +8,24 @@ const router = express.Router();
 const User = require("../model/user");
 
 /**
- * @method - POST
- * @param - /signup
- * @description - User SignUp
- */
-
+* @swagger
+* /signup:
+*   post:
+*     summary: Метод для создания пользователя в системе
+*     parameters:
+*       - in: path
+*         name: username
+*         required: true
+*         description: Имя пользователя
+*         schema:
+*           type: string
+*       - in: path
+*         name: password
+*         required: true
+*         description: Пароль пользователя
+*         schema:
+*           type: string
+*/
 router.post(
     "/signup",
     [
@@ -81,6 +94,26 @@ router.post(
         }
     }
 );
+
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Логин-метод для пользователя
+ *     parameters:
+ *       - in: path
+ *         name: username
+ *         required: true
+ *         description: Имя пользователя в системе
+ *         schema:
+ *           type: string
+ *       - in: path
+ *         name: password
+ *         required: true
+ *         description: Пароль пользователя
+ *         schema:
+ *           type: string
+ */
 router.post(
     "/login",
     [
@@ -145,6 +178,16 @@ router.post(
       }
     }
   );
+
+/**
+ * @swagger
+ * /me:
+ *   get:
+ *    summary: Получить информацию о пользователе
+ *   responses:
+ *    200:
+ *      description: Информация о пользователе в формате JSON
+ */
 router.get("/me", auth, async (req, res) => {
 try {
     // request.user is getting fetched from Middleware after token authentication
