@@ -1,0 +1,27 @@
+{
+  "name": "taskario-server",
+  "version": "1.0.0",
+  "description": "A Node.js server for Taskar.io - a simple task tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jsdoc": "node_modules/.bin/jsdoc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.1.0",
+    "package.json": "^2.0.1",
+    "swagger-jsdoc": "5.0.1",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.2",
+    "nodemon": "^2.0.22"
+  }
+}
